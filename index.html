@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe and Tell</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .move {
+            animation: move 3s ease-in-out infinite;
+        }
+        @keyframes move {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5%); }
+            100% { transform: translateY(0%); }
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+    <div class="image absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-[url(bg-text.png)] bg-cover bg-top bg-center z-10 move">
+    </div>
+    <div class="image absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-[url(bg-box.png)] bg-cover bg-top bg-center">
+    </div>
+</body>
+</html> 
