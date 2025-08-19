@@ -25,16 +25,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&amp;display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/wp-content/themes/vibeandtell.com/style/build.css">
+    <link rel="stylesheet" href="/wp-content/themes/vibeandtell.com/style/build.css?v=1755641225">
     <script src="/wp-content/themes/vibeandtell.com/js/dark-mode.js"></script>
 </head>
 <body class="bg-white dark:bg-gray-900">
 
 <header class="bg-white dark:bg-gray-900">
-    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+    <nav aria-label="Global" class="mx-auto flex w-full items-center justify-between p-6 lg:px-8">
       <div class="flex flex-0 md:flex-1">
         <div class="hidden lg:flex lg:gap-x-8">
-          <ul id="menu-header" class="flex gap-x-8"><a href="/projects" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Featured</a><a href="/challenges/" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Challenges</a><a href="/sponsors/" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Sponsors</a></ul>        </div>
+          <ul id="menu-header" class="flex gap-x-8"><a href="/projects" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Featured</a><a href="/challenges/" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Challenges</a><a href="/leaderboard/" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Leaderboard</a><a href="/sponsors/" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Sponsors</a></ul>        </div>
         <div class="flex lg:hidden">
           <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-400 dark:hover:text-white">
             <span class="sr-only">Open main menu</span>
@@ -75,7 +75,7 @@
           </div>
           
         <a href="#" class="text-sm/6 font-semibold text-gray-900 dark:text-white rounded-xl px-4 py-2 border-2 border-brand/20">Log in <span class="hidden md:inline" aria-hidden="true">&rarr;</span></a>
-        <a href="#" class="text-sm/6 font-semibold text-gray-900 dark:text-white bg-brand text-white rounded-xl px-4 py-2  ">Join <span class="hidden md:inline" aria-hidden="true">&amp;plus;</span></a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900 dark:text-white bg-brand text-white rounded-xl px-4 py-2  ">Join <span class="hidden md:inline" aria-hidden="true">+</span></a>
       </div>
     </nav>
     <el-dialog>
@@ -91,47 +91,107 @@
                   </svg>
                 </button>
               </div>
-              <a href="#" class="-m-1.5 p-1.5">
-                <span class="sr-only">Your Company</span>
-                <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&amp;shade=600" alt="" class="h-8 w-auto dark:hidden">
-                <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&amp;shade=500" alt="" class="h-8 w-auto not-dark:hidden">
+              <a href="/" class="-m-1.5 p-1.5">
+                <span class="sr-only">Vibe &amp; Tell</span>
+                <img src="/wp-content/themes/vibeandtell.com/vibe-and-tell-logo.svg" alt="" class="h-3 md:h-8 w-auto dark:hidden">
+                <img src="/wp-content/themes/vibeandtell.com/vibe-and-tell-logo-dark-mode.svg" alt="" class="h-3 md:h-8 w-auto not-dark:hidden">
               </a>
               <div class="flex flex-1 justify-end">
                 <a href="#" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Log in <span aria-hidden="true">&rarr;</span></a>
               </div>
             </div>
             <div class="mt-6 space-y-2">
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Featured</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Challenges</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Sponsors</a>
-            </div>
+              <ul id="menu-header-1" class="menu"><a href="/projects" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Featured</a><a href="/challenges/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Challenges</a><a href="/leaderboard/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Leaderboard</a><a href="/sponsors/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Sponsors</a></ul>            </div>
           </el-dialog-panel>
         </div>
       </dialog>
     </el-dialog>
   </header>
+<div class="bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="mb-12 text-center">
+            <h1 class="font-brand text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+                Challenges
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300">
+                Discover exciting challenges and competitions with prizes
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+                <div class="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow-lg dark:divide-white/10 dark:bg-gray-800/50 dark:shadow-none dark:outline dark:-outline-offset-1 dark:outline-white/10 hover:shadow-xl transition-shadow duration-300">
+                    <a href="/challenge/bolt-new-design-challenge/" class="block">
+                        <img src="/wp-content/uploads/2025/08/bolt-cloud-challenge-1024x575.jpg" alt="Bolt.new Design Challenge" class="aspect-video object-cover">
+                    </a>
+                    <div class="px-6 py-6">
+                        <div class="mb-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <a href="/challenge/bolt-new-design-challenge/" class="font-brand text-xl dark:text-white hover:text-brand">Bolt.new Design Challenge</a>
+                                                                    <span class="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
+                                        $5,000                                    </span>
+                                                            </div>
+                            
+                                                            <p class="text-gray-500 dark:text-gray-300 line-clamp-2 text-sm">
+                                    Create a stunning site and publish it with Bolt's new hosting &amp; domain features, with...                                </p>
+                                                    </div>
+
+                        <div class="space-y-3">
+                                                            <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"></path>
+                                    </svg>
+                                    3 days remaining                                </div>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                                                
+                                                                                                                                                    <a href="/host/bolt/" class="text-brand bg-brand/10 dark:bg-blue-100 rounded-md px-2 py-1 leading-none flex items-center gap-1">
+                                                                                            <img src="/wp-content/uploads/2025/08/bolt.svg" alt="" class="w-3 h-3 object-contain">
+                                                                                        <span class="text-xs">
+                                                Bolt                                            </span>
+                                        </a>
+                                                                                                </div>
+                        </div>
+
+                        <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <a href="/challenge/bolt-new-design-challenge/" class="inline-flex items-center text-brand hover:text-brand/80 font-medium text-sm">
+                                View Details
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                    </div>
+    </div>
 
 <div class="bg-white dark:bg-gray-900">
-    <div class="max-w-4xl mx-auto px-6 py-12">
-        <div class="mb-8">
-            <h1 class="font-brand text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-                Challenges            </h1>
-            
-                    </div>
-
-        <div class="prose prose-lg max-w-none dark:prose-invert prose-headings:font-brand prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-a:text-brand hover:prose-a:text-brand/80">
-            
-<p>Coming soon&hellip;</p>
-            
-                    </div>
-
-        <div class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
-            <p class="text-sm text-gray-500 dark:text-gray-400">
-                Last updated: August 16, 2025            </p>
-        </div>
+  <div class="mx-auto max-w-7xl py-16 sm:px-6 lg:px-8">
+    <div class="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16 dark:bg-gray-800 dark:shadow-none dark:after:pointer-events-none dark:after:absolute dark:after:inset-0 dark:after:inset-ring dark:after:inset-ring-white/10 dark:after:sm:rounded-3xl">
+      <h2 class="font-brand text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">Ready to Sponsor a Challenge?</h2>
+      <p class="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-gray-300">Connect with talented builders and showcase your brand through exciting hackathons and creative challenges. Let's connect and create something amazing together!</p>
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <a href="https://wims.vc/contact/" class="rounded-xl bg-white px-4 py-3 text-lg font-semibold text-gray-900 shadow-xs hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white dark:bg-white/10 dark:text-white dark:shadow-none dark:inset-ring dark:inset-ring-white/5 dark:hover:bg-white/15 dark:focus-visible:outline-white">Contact us at wims.vc</a>
+        <a href="https://wims.vc/blog/challenges-building-fast" class="text-lg/6 font-semibold text-white">
+          Learn more
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+      <svg viewbox="0 0 1024 1024" aria-hidden="true" class="absolute top-1/2 left-1/2 -z-10 size-256 -translate-x-1/2 mask-[radial-gradient(closest-side,white,transparent)]">
+        <circle r="512" cx="512" cy="512" fill="url(#827591b1-ce8c-4110-b064-7cb85a0b1217)" fill-opacity="0.7"></circle>
+        <defs>
+          <radialgradient id="827591b1-ce8c-4110-b064-7cb85a0b1217">
+            <stop stop-color="#7775D6"></stop>
+            <stop offset="1" stop-color="#E935C1"></stop>
+          </radialgradient>
+        </defs>
+      </svg>
     </div>
+  </div>
 </div>
-
+</div>
 
 
 <footer class="bg-white dark:bg-gray-900">
