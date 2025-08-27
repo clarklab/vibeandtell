@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&amp;display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/wp-content/themes/vibeandtell.com/style/build.css?v=1756327601">
+    <link rel="stylesheet" href="/wp-content/themes/vibeandtell.com/style/build.css?v=1756328070">
     <script src="/wp-content/themes/vibeandtell.com/js/dark-mode.js"></script>
 </head>
 <body class="bg-white dark:bg-gray-900">
@@ -206,12 +206,17 @@
     <script>
     // WordPress AJAX configuration (only define once)
     if (typeof upvote_ajax === 'undefined') {
-        // Always use the WordPress site URL for AJAX calls
-        // This ensures it works on both WordPress and static sites
+        // Build the WordPress AJAX URL dynamically to avoid any static site URL processing
+        const wpSubdomain = 'superfunstage';
+        const wpProvider = 'wpengine';
+        const wpTld = 'com';
+        const wpDomain = wpSubdomain + '.' + wpProvider + '.' + wpTld;
+        const wpAjaxPath = '/wp-admin/admin-ajax.php';
+        
         window.upvote_ajax = {
-            ajax_url: '/wp-admin/admin-ajax.php',
+            ajax_url: 'https://' + wpDomain + wpAjaxPath,
             nonce: '82032ab5db',
-            is_static: window.location.hostname !== 'superfunstage.wpengine.com'
+            is_static: window.location.hostname !== wpDomain
         };
         
         // Initialize voted states on page load
