@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&amp;display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/wp-content/themes/vibeandtell.com/style/build.css?v=1756328069">
+    <link rel="stylesheet" href="/wp-content/themes/vibeandtell.com/style/build.css?v=1756328563">
     <script src="/wp-content/themes/vibeandtell.com/js/dark-mode.js"></script>
 </head>
 <body class="bg-white dark:bg-gray-900">
@@ -263,9 +263,10 @@
             is_static: window.location.hostname !== wpDomain
         };
         
-        // Initialize voted states on page load
+        // Initialize voted states and sync vote counts on page load
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.upvote-btn');
+            
             buttons.forEach(button => {
                 const postId = button.getAttribute('data-post-id');
                 const hasVoted = localStorage.getItem('upvoted_' + postId) === 'true';
@@ -274,7 +275,45 @@
                     button.classList.add('voted');
                 }
             });
+            
+            // Sync vote counts with WordPress data (especially important for static sites)
+            if (window.upvote_ajax.is_static && buttons.length > 0) {
+                syncVoteCounts();
+            }
         });
+        
+        // Function to sync vote counts from WordPress
+        function syncVoteCounts() {
+            const buttons = document.querySelectorAll('.upvote-btn');
+            const postIds = Array.from(buttons).map(btn => btn.getAttribute('data-post-id'));
+            
+            if (postIds.length === 0) return;
+            
+            // Create form data for batch vote count request
+            const formData = new FormData();
+            formData.append('action', 'get_vote_counts');
+            formData.append('post_ids', JSON.stringify(postIds));
+            
+            fetch(window.upvote_ajax.ajax_url, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success && data.data.counts) {
+                    // Update each vote count display
+                    Object.entries(data.data.counts).forEach(([postId, count]) => {
+                        const countElement = document.getElementById('upvote-count-' + postId);
+                        if (countElement) {
+                            countElement.textContent = count;
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                console.log('Vote count sync failed:', error);
+            });
+        }
         
         window.upvoteProject = function(postId) {
             const button = document.querySelector(`[data-post-id="${postId}"]`);
