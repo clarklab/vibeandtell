@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&amp;display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/wp-content/themes/vibeandtell.com/style/build.css?v=1756327227">
+    <link rel="stylesheet" href="/wp-content/themes/vibeandtell.com/style/build.css?v=1756327601">
     <script src="/wp-content/themes/vibeandtell.com/js/dark-mode.js"></script>
 </head>
 <body class="bg-white dark:bg-gray-900">
@@ -263,6 +263,8 @@
     <script>
     // WordPress AJAX configuration (only define once)
     if (typeof upvote_ajax === 'undefined') {
+        // Always use the WordPress site URL for AJAX calls
+        // This ensures it works on both WordPress and static sites
         window.upvote_ajax = {
             ajax_url: '/wp-admin/admin-ajax.php',
             nonce: '82032ab5db',
