@@ -327,6 +327,9 @@
   .mt-1 {
     margin-top: calc(var(--spacing) * 1);
   }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
@@ -410,6 +413,9 @@
   }
   .inline-flex {
     display: inline-flex;
+  }
+  .aspect-\[2\/1\] {
+    aspect-ratio: 2/1;
   }
   .aspect-video {
     aspect-ratio: var(--aspect-video);
