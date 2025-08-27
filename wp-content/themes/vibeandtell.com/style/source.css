@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+    --color-brand: #0033FF;
+  }
+
+  @custom-variant dark (&:where(.dark, .dark *));
+
+
+.font-brand {
+    font-family: "Syne", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.single-body a {
+  @apply underline;
+}
